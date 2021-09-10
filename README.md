@@ -10,11 +10,11 @@ In this application, the main page displays a list of "shelves" (i.e. categories
 * Want to Read
 * Read
 
-![](app/src/main/res/drawable/refrence_image1.png)
+![](https://github.com/Raghad-Khaled/Reader/blob/master/images/F1.png)
 
 Each book has a control that lets you select the shelf for that book. When you select a different shelf, the book moves there. Note that the default value for the control should always be the current shelf the book is in.
 
-![](app/src/main/res/drawable/refrence_image1.png)
+![](https://github.com/Raghad-Khaled/Reader/blob/master/images/F2.png)
 
 The main page also has a link to /search, a search page that allows you to find books to add to your library.
 
@@ -22,7 +22,7 @@ The search page has a text input that may be used to find books. As the value of
 
 When a book is on a bookshelf, it should have the same state on both the main application page and the search page.
 
-[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
+![](https://github.com/Raghad-Khaled/Reader/blob/master/images/F1.png)
 
 ## Contributing
 Pull requests are welcome.
