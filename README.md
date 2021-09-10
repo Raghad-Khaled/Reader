@@ -1,6 +1,6 @@
 # Reader
 
-# Project Overview
+## Project Overview
 
 In the MyReads project, you'll create a bookshelf app that allows you to select and categorize books you have read, are currently reading, or want to read. The project emphasizes using React to build the application and provides an API server and client library that you will use to persist information as you interact with the application.
 
@@ -24,13 +24,13 @@ The search page has a text input that may be used to find books. As the value of
 
 When a book is on a bookshelf, it should have the same state on both the main application page and the search page.
 
-![](https://github.com/Raghad-Khaled/Reader/blob/master/images/F3.png)
+![](https://github.com/Raghad-Khaled/Reader/blob/master/images/F3.mp4)
 
 ## Contributing
 Pull requests are welcome.
 ```bash
-git clone 'https://github.com/raghadkhaled/Reader'
-cd reactnd-project-myreads-starter
+git clone 'https://github.com/Raghad-Khaled/Reader.git'
+cd Reader
 npm install
 npm start
 ```
