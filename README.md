@@ -24,7 +24,7 @@ The search page has a text input that may be used to find books. As the value of
 
 When a book is on a bookshelf, it should have the same state on both the main application page and the search page.
 
-![](https://github.com/Raghad-Khaled/Reader/blob/master/images/F3.mp4)
+![](https://github.com/Raghad-Khaled/Reader/blob/master/images/F3.gif)
 
 ## Contributing
 Pull requests are welcome.
