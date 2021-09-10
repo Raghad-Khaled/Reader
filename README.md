@@ -29,7 +29,7 @@ When a book is on a bookshelf, it should have the same state on both the main ap
 ## Contributing
 Pull requests are welcome.
 ```bash
-git clone 'https://github.com/Raghad-Khaled/Reader.git'
+git clone https://github.com/Raghad-Khaled/Reader.git
 cd Reader
 npm install
 npm start
