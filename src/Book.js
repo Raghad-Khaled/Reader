@@ -34,9 +34,7 @@ class Book extends React.Component {
                        </div>
                     </div>
                   <div className="book-title">{book.title}</div>
-                  <div className="book-authors">{book.authors&&book.authors.length>0 && book.authors.map((one)=>(<span key={one}>
-                    {one} , 
-                    </span>))}</div>
+                  <div className="book-authors">{book.authors&&book.authors.length>0 && book.authors.join(', ')}</div>
                 </div>
                     
     )

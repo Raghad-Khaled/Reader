@@ -1,14 +1,43 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Book from './Book'
-import {Link} from 'react-router-dom'
+
 
 class BookList extends React.Component {
  state={
    SearchBook:[],
    query:""
  }
+
+ booksinshelf=()=>{
+  let Booksin=[];
+  const fromsearch=this.state.SearchBook;
+  const inshelfs=this.props.Books;
+  //console.log(fromsearch);
+  //console.log(inshelfs);
+  let found=false;
+ for(let i=0;i<fromsearch.length;i++){
+   found=false;
+   for(let j=0;j<inshelfs.length;j++){
+     if(fromsearch[i].id===inshelfs[j].id){
+       Booksin.push(inshelfs[j]);
+       found=true;
+       break;
+       }
+   }
+   if(!found){
+     fromsearch[i].shelf="None";
+     Booksin.push(fromsearch[i]);
+   }
+ }
+ this.setState(()=>({
+   SearchBook:Booksin
+  }))
+  //console.log(Booksin);
+ // console.log(this.state.SearchBook);
+}
 
  Searchhandler=(query)=>{
   this.setState(()=>({
@@ -21,13 +50,18 @@ class BookList extends React.Component {
     this.setState(()=>({
      SearchBook:Books,
     }))
+    this.booksinshelf();
   })
  }else{
   this.setState(()=>({
     SearchBook:[],
    }))
  }
+
+
  }
+
+
 
   render() {
     return (
@@ -36,14 +70,6 @@ class BookList extends React.Component {
             <div className="search-books-bar">
               <Link to="/" className="close-search">Close</Link>
               <div className="search-books-input-wrapper">
-                {/*
-                  NOTES: The search from BooksAPI is limited to a particular set of search terms.
-                  You can find these search terms here:
-                  https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md
-
-                  However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
-                  you don't find a specific author or title. Every search is limited by search terms.
-                */}
                 <input value={this.state.query} onChange={(e)=>this.Searchhandler(e.target.value)} type="text" placeholder="Search by title or author"/>
 
               </div>
@@ -51,7 +77,7 @@ class BookList extends React.Component {
             <div className="search-books-results">
               <ol className="books-grid">
               { this.state.SearchBook && this.state.SearchBook.length>0 ?
-                (this.state.SearchBook.map((book)=>(
+                ( this.state.SearchBook.map((book)=>(
                   <li key={book.id}> <Book  key={book.id} updateBook={this.props.updateBook} book={book} val={this.props.val}/> </li>
                    ))
                 ) : (<div>
